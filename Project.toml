@@ -1,0 +1,17 @@
+name = "Double64s"
+uuid = "bd8efbba-9421-4934-9da2-21b7c567c56a"
+authors = ["Jeffrey A. Sarnoff <jeffrey.sarnoff@gmail.com>",]
+keywords = ["Julia", "errorfree", "floating point", "extended precision", "high performance"]
+repo = "https://github.com/JeffreySarnoff/Double64s.jl.git"
+version = "0.1.0"
+
+[deps]
+
+[compat]
+julia = "1.8-rc4"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
