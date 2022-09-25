@@ -10,7 +10,7 @@ end
 function Double64(a::Float64, b::Float64)
     Double64(two_sum(a, b))
 end
-    
+
 hi(x::Double64) = x.hi
 lo(x::Double64) = x.lo
 
@@ -21,3 +21,8 @@ function Base.show(io::IO, ::MIME"text/plain", x::Double64)
       print(io, hi(x))
 end
 
+function showall(io::IO, x::Double64)
+    str = string("Double64(", hi(x), ", ", lo(x), ")")
+    print(io, str)
+end
+showall(x::Double64) = showall(stdout, x)
