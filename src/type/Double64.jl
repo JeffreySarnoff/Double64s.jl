@@ -1,24 +1,23 @@
-struct FloatD64 <: AbstractFloat
+struct Double64 <: AbstractFloat
     hi::Float64
     lo::Float64
   
-    FloatD64(hi::Float64, lo::Float64) =
-        new(hi, lo)
+    function Double64(hilo::Tuple{Float64, Float64})
+        new(hilo[1], hilo[2])
+    end
 end
 
 function Double64(a::Float64, b::Float64)
-    hi, lo = two_sum(a, b)
-    FloatD64(hi, lo)
+    Double64(two_sum(a, b))
 end
-  
-hi(x::FloatD64) = x.hi
-lo(x::FloatD64) = x.lo
+    
+hi(x::Double64) = x.hi
+lo(x::Double64) = x.lo
 
-hilo(x::FloatD64) = (x.hi, x.lo)
-lohi(x::FloatD64) = (x.lo, x.hi)
+hilo(x::Double64) = (x.hi, x.lo)
+lohi(x::Double64) = (x.lo, x.hi)
 
-function Base.show(io::IO, ::MIME"text/plain", x::FloatD64)
-      str = string("Double64(", x.hi, ", ", x.lo, ")")
-      print(io, str)
+function Base.show(io::IO, ::MIME"text/plain", x::DoubleD64)
+      print(io, hi(x))
 end
 
