@@ -1,7 +1,7 @@
 struct Double64 <: AbstractFloat
     hi::Float64
     lo::Float64
-  
+
     function Double64(hilo::Tuple{Float64, Float64})
         new(hilo[1], hilo[2])
     end
