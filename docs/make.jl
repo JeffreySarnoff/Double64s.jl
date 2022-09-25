@@ -7,6 +7,7 @@ makedocs(
     pages  = Any[
         "Overview"                 => "index.md",
         "The Types"                => "types.md",
+        "Provisioning for SIMD"    => "provisioning.md",
         ]
     )
 
