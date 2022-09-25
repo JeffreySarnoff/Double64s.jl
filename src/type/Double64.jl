@@ -17,7 +17,7 @@ lo(x::Double64) = x.lo
 hilo(x::Double64) = (x.hi, x.lo)
 lohi(x::Double64) = (x.lo, x.hi)
 
-function Base.show(io::IO, ::MIME"text/plain", x::DoubleD64)
+function Base.show(io::IO, ::MIME"text/plain", x::Double64)
       print(io, hi(x))
 end
 
