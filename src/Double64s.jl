@@ -5,8 +5,8 @@ export Double64, CDouble64
 using ErrorfreeArithmetic
 
 # exported types
-include("Double64.jl")
-include("CDouble64.jl")
+include("type/Double64.jl")
+include("type/CDouble64.jl")
 
 
 
