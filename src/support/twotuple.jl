@@ -1,7 +1,16 @@
+hi(a,b) = a
+lo(a,b) = b
+
+hi(ab::NTuple{2,T}) where {T} = ab[1]
+lo(ab::NTuple{2,T}) where {T} = ab[2]
+
 twotuple(a, b) = (a, b)
 twotuple(ab::NTuple{2,T}) where {T} = ab
 
 const HILO = NamedTuple{(:hi, :lo), Tuple{Float64, Float64})
+
+hi(x::HILO) = x.hi
+lo(x::HILO) = x.lo
 
 hilo(a, b) = HILO((a, b))
 hilo(ab::NTuple{2,Float64}) = HILO(ab)
