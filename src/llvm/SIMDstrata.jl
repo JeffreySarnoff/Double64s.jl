@@ -48,6 +48,51 @@ function (-)(a::Float64x4, b::Float64x4)
      VecElement(a[4].value + b[4].value))
 end
 
+function (*)(a::Float64x1, b::Float64x1)
+    (VecElement(a[1].value * b[1].value))
+end
+
+function (*)(a::Float64x2, b::Float64x2)
+    (VecElement(a[1].value * b[1].value),
+     VecElement(a[2].value * b[2].value))
+end
+
+function (*)(a::Float64x3, b::Float64x3)
+    (VecElement(a[1].value * b[1].value),
+     VecElement(a[2].value * b[2].value),
+     VecElement(a[3].value * b[3].value))
+end
+
+function (*)(a::Float64x4, b::Float64x4)
+    (VecElement(a[1].value * b[1].value),
+     VecElement(a[2].value * b[2].value),
+     VecElement(a[3].value * b[3].value),
+     VecElement(a[4].value * b[4].value))
+end
+
+function (*)(a::Float64x1, b::Float64x1)
+    (VecElement(a[1].value / b[1].value))
+end
+
+function (/)(a::Float64x2, b::Float64x2)
+    (VecElement(a[1].value / b[1].value),
+     VecElement(a[2].value / b[2].value))
+end
+
+function (/)(a::Float64x3, b::Float64x3)
+    (VecElement(a[1].value / b[1].value),
+     VecElement(a[2].value / b[2].value),
+     VecElement(a[3].value / b[3].value))
+end
+
+function (/)(a::Float64x4, b::Float64x4)
+    (VecElement(a[1].value / b[1].value),
+     VecElement(a[2].value / b[2].value),
+     VecElement(a[3].value / b[3].value),
+     VecElement(a[4].value / b[4].value))
+end
+
+
 function add(a::Float64x1, b::Float64x1)
     (VecElement(a[1].value + b[1].value))
 end
@@ -140,8 +185,44 @@ function Base.inv(a::Float64x1)
     (VecElement(inv(a[1].value)))
 end
 
+function Base.inv(a::Float64x2)
+    (VecElement(inv(a[1].value)),
+     VecElement(inv(a[2].value)))
+end
+
+function Base.inv(a::Float64x3)
+    (VecElement(inv(a[1].value)),
+     VecElement(inv(a[2].value)),
+     VecElement(inv(a[3].value)))
+end
+
+function Base.inv(a::Float64x4)
+    (VecElement(inv(a[1].value)),
+     VecElement(inv(a[2].value)),
+     VecElement(inv(a[3].value)),
+     VecElement(inv(a[4].value)))
+end
+
 function Base.sqrt(a::Float64x1)
     (VecElement(sqrt(a[1].value)))
+end
+
+function Base.sqrt(a::Float64x2)
+    (VecElement(sqrt(a[1].value)),
+     VecElement(sqrt(a[2].value)))
+end
+
+function Base.sqrt(a::Float64x3)
+    (VecElement(sqrt(a[1].value)),
+     VecElement(sqrt(a[2].value)),
+     VecElement(sqrt(a[3].value)))
+end
+
+function Base.sqrt(a::Float64x4)
+    (VecElement(sqrt(a[1].value)),
+     VecElement(sqrt(a[2].value)),
+     VecElement(sqrt(a[3].value)),
+     VecElement(sqrt(a[4].value)))
 end
 
 function Base.cbrt(a::Float64x1)
