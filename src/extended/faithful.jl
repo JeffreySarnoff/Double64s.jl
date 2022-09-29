@@ -37,7 +37,7 @@ hi(x::CPair) = x.hi
 lo(x::CPair) = x.lo
 hilo(x::CPair) = (x.hi, x.lo)
 
-function CPairSum(ae::CPair{T}, bf::CPair{T}) with {T}
+function CPairSum(ae::CPair{T}, bf::CPair{T}) where {T}
     a, e = hilo(ae)
     b, f = hilo(bf)
     c = a + b
@@ -47,7 +47,7 @@ function CPairSum(ae::CPair{T}, bf::CPair{T}) with {T}
     CPair(c, g)
 end
 
-function CPairDiff(ae::CPair{T}, bf::CPair{T}) with {T}
+function CPairDiff(ae::CPair{T}, bf::CPair{T}) where {T}
     a, e = hilo(ae)
     b, f = hilo(bf)
     c = a - b
@@ -57,7 +57,7 @@ function CPairDiff(ae::CPair{T}, bf::CPair{T}) with {T}
     CPair(c, g)
 end
 
-function CPairProd(ae::CPair{T}, bf::CPair{T}) with {T}
+function CPairProd(ae::CPair{T}, bf::CPair{T}) where {T}
     a, e = hilo(ae)
     b, f = hilo(bf)
     c = a * b
@@ -69,7 +69,7 @@ function CPairProd(ae::CPair{T}, bf::CPair{T}) with {T}
     CPair(c, g)
 end
 
-function CPairDiv(ae::CPair{T}, bf::CPair{T}) with {T}
+function CPairDiv(ae::CPair{T}, bf::CPair{T}) where {T}
     a, e = hilo(ae)
     b, f = hilo(bf)
     c = a / b
@@ -82,7 +82,7 @@ function CPairDiv(ae::CPair{T}, bf::CPair{T}) with {T}
     CPair(c, g)
 end
 
-function CPairInv(bf::CPair{T}) with {T}
+function CPairInv(bf::CPair{T}) where {T}
     b, f = hilo(bf)
     c = one(T) / b
     t = fma(-b, c, one(T))
@@ -93,7 +93,7 @@ function CPairInv(bf::CPair{T}) with {T}
     CPair(c, g)
 end
 
-function CPairSqrt(ae::CPair{T}) with {T}
+function CPairSqrt(ae::CPair{T}) where {T}
     a, e = hilo(ae)
     c = sqrt(a)
     t = fma(-c, c, a)
